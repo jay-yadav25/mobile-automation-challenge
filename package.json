@@ -1,0 +1,31 @@
+{
+  "name": "saucedemo-mobile-automation",
+  "version": "1.0.0",
+  "description": "Playwright + TypeScript mobile-web automation suite for SauceDemo (Mobile Automation Engineer take-home challenge)",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:mobile-chrome": "playwright test --project=\"Mobile Chrome (Pixel 7)\"",
+    "test:mobile-safari": "playwright test --project=\"Mobile Safari (iPhone 14)\"",
+    "test:desktop": "playwright test --project=\"Desktop Chrome (Regression)\"",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write \"**/*.{ts,md,json}\"",
+    "install:browsers": "playwright install --with-deps"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "@types/node": "^22.20.1",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "dotenv": "^17.4.2",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.0"
+  }
+}
