@@ -6,6 +6,12 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # 18:30 UTC = 00:00 IST (midnight, Asia/Kolkata). GitHub Actions cron is
+    # always UTC - there's no native timezone field, so the offset is baked
+    # into the numbers below. If you're not in IST, adjust the hour: cron
+    # hour = (desired local hour) - (your UTC offset), wrapped into 0-23.
+    - cron: '30 18 * * *'
 
 jobs:
   test:
